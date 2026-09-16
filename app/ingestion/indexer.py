@@ -1,5 +1,5 @@
 import chromadb
-
+from app.core.vector_store import get_collection
 from app.core.config import settings
 from app.ingestion.models import DocumentChunk
 
@@ -15,9 +15,7 @@ def index_chunks(chunks: list[DocumentChunk]) -> int:
         path=settings.chroma_path
     )
 
-    collection = client.get_or_create_collection(
-        name=COLLECTION_NAME
-    )
+    collection = get_collection()
 
     ids = []
     documents = []

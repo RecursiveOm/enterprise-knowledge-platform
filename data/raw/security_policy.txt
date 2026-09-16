@@ -1,0 +1,7 @@
+Security Policy
+
+Passwords must contain at least 12 characters.
+
+Accounts are temporarily locked after 5 consecutive failed login attempts.
+
+Employees must enable multi-factor authentication for company systems.
