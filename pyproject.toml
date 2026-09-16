@@ -1,0 +1,25 @@
+[project]
+name = "enterprise-knowledge-platform"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+authors = [
+    { name = "RecursiveOm", email = "omkar.zunje123@gmail.com" }
+]
+requires-python = ">=3.12"
+dependencies = [
+    "chromadb>=1.5.9",
+    "fastapi>=0.141.1",
+    "langchain-text-splitters>=1.1.2",
+    "pydantic>=2.13.5",
+    "pydantic-settings>=2.15.0",
+    "python-dotenv>=1.2.3",
+    "uvicorn>=0.53.0",
+]
+
+[project.scripts]
+enterprise-knowledge-platform = "enterprise_knowledge_platform:main"
+
+[build-system]
+requires = ["uv_build>=0.12.9,<0.13.0"]
+build-backend = "uv_build"
