@@ -1,7 +1,7 @@
 from fastapi import FastAPI
-
+from app.core.config import settings
 app = FastAPI(
-    title="Enterprise Knowledge Intelligence Platform"
+    title=settings.app_name
 )
 
 @app.get("/health")
