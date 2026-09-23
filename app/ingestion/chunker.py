@@ -1,3 +1,4 @@
+from hashlib import sha256
 from pathlib import Path
 
 from langchain_text_splitters import RecursiveCharacterTextSplitter
@@ -18,13 +19,15 @@ def chunk_document(
 
     texts = splitter.split_text(document.content)
 
-    source_name = Path(document.source).stem
+    source_path = Path(document.source).expanduser().resolve()
+    source_name = source_path.stem
+    source_id = sha256(str(source_path).encode("utf-8")).hexdigest()
 
     chunks = []
 
     for index, text in enumerate(texts):
         chunk = DocumentChunk(
-            chunk_id=f"{source_name}-{index}",
+            chunk_id=f"{source_name}-{source_id}-{index}",
             content=text,
             source=document.source,
             metadata={
