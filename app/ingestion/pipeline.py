@@ -15,8 +15,12 @@ def ingest_text_document(
         metadata=metadata
     )
 
-    chunks = chunk_document(document)
+    chunks = chunk_document(
+        document
+    )
 
-    indexed_count = index_chunks(chunks)
+    indexed_count = index_chunks(
+        chunks
+    )
 
     return indexed_count
